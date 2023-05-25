@@ -9,14 +9,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit some common TWRP stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from mondrian device
 $(call inherit-product, device/xiaomi/mondrian/device.mk)
 
 PRODUCT_DEVICE := mondrian
-PRODUCT_NAME := omni_mondrian
+PRODUCT_NAME := twrp_mondrian
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := 23013RK75C
 PRODUCT_MANUFACTURER := xiaomi
