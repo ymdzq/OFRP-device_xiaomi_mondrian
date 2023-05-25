@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_mondrian.mk
+    $(LOCAL_DIR)/twrp_mondrian.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_mondrian-user \
-    omni_mondrian-userdebug \
-    omni_mondrian-eng
+    twrp_mondrian-user \
+    twrp_mondrian-userdebug \
+    twrp_mondrian-eng
