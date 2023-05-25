@@ -1,0 +1,27 @@
+on property:vold.miui=factoryreset
+    # debugfs
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+
+    # Create location for fs_mgr to store abbreviated output from filesystem
+    # checker programs.
+    mkdir /dev/fscklogs 0770 root system
+
+    wait /dev/block/bootdevice
+    mount_all miui.factoryreset.fstab
+
+    # We chown/chmod /data again so because mount is run as root + defaults
+    chown system system /data
+    chmod 0771 /data
+    # We restorecon /data in case the userdata partition has been reset.
+    restorecon /data
+
+    # for logcat
+    start logd
+
+    start factoryreset
+
+service factoryreset /system/bin/recovery --wipe_data_skip_preinstall
+    class late_start
+    seclabel u:r:recovery:s0
+
