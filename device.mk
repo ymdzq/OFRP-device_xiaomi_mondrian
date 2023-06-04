@@ -22,8 +22,8 @@ ENABLE_VIRTUAL_AB := true
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    bootctrl.taro.recovery \
+    android.hardware.boot@1.2-impl-qti.recovery
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
