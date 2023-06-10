@@ -16,10 +16,10 @@
 	export OF_MAINTAINER=ymdzq
 	# 设置版本号为日期
 	export FOX_VERSION=$(date +%y.%m.%d)
+	# 当你需要标记出这个recovery是一个特殊版本时使用
+	# export FOX_VARIANT=MIUI
 
 	## 添加功能
-	# 使用完整版ps命令
-	export FOX_REPLACE_BUSYBOX_PS=1
 	# 使用完整版getprop命令
 	export FOX_REPLACE_TOOLBOX_GETPROP=1
 	# 支持tar命令
@@ -57,14 +57,12 @@
 	# export OF_SKIP_FBE_DECRYPTION=1
 	# 当ROM大于等于指定安卓SDK等级时，跳过FBE解密流程
 	# export OF_SKIP_FBE_DECRYPTION_SDKVERSION=31
-	# 在MIUI OTA还原期间尝试解密内部存储（而不是错误退出）
-	export OF_OTA_RES_DECRYPT=1
-	# 在准备MIUI OTA增量更新时不备份vendor_image
-	export OF_NO_MIUI_OTA_VENDOR_BACKUP=1
 	# 防止橙狐在解密后重新运行自启动进程
 	export OF_NO_RELOAD_AFTER_DECRYPTION=1
 	# 禁用检查rom里的compatibility.zip
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
+	# 使用zip卡刷包的方式安装橙狐后不恢复橙狐的默认设置
+	export FOX_RESET_SETTINGS=1
 	# 删除zip包里的AromaFM（有的设备用不了）
 	export FOX_DELETE_AROMAFM=1
 
@@ -97,13 +95,14 @@
 	# 设置一个很老的build时间，用于解决某些ROM例如MIUI刷机脚本里的防回滚保护检测
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
 
-	# 尝试处理AVB2.0，防止橙狐被官方recovery替换
-	# export OF_PATCH_AVB20=1
-
+	# 为“快速备份”指定默认选择的分区
+	export OF_QUICK_BACKUP_LIST="/boot;/data;"
+	# 禁用橙狐内置的magisk菜单
+	# export FOX_DELETE_MAGISK_ADDON=1
 	# 使用指定的magisk
 	# export FOX_USE_SPECIFIC_MAGISK_ZIP="$HOME/Magisk.zip"
 	# 使用指定的magisk版本号，由于magisk 23+使用了新的包装形式，文件路径改变了，橙狐无法获取正确的版本
-	# export MAGISK_VER=25.2
+	# export MAGISK_VER=26.1
 	# 当修补recovery/boot镜像时，始终指示magiskboot v24+修补vbmeta标头（自动禁用avb验证？）
 	export FOX_PATCH_VBMETA_FLAG=1
 	# 标记该设备肯定是原生Android 11+虚拟A/B（“VAB”）设备
