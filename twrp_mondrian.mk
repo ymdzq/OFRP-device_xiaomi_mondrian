@@ -11,7 +11,7 @@ PRODUCT_RELEASE_NAME := mondrian
 # Inherit from those products. Most specific first.
 # 引用默认的编译配置文件，core_64_bit必须先于其他引用，否则不生效
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Enable virtual A/B OTA
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
