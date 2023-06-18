@@ -119,11 +119,14 @@ TW_BATTERY_SYSFS_WAIT_SECONDS := 5
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 # Kernel modules
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko focaltech_fts.ko goodix_core.ko qti_battery_charger.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko goodix_core.ko qti_battery_charger.ko"
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# Haptics
+TW_NO_HAPTICS := true
 
 # Tool
 TW_INCLUDE_REPACKTOOLS := true
