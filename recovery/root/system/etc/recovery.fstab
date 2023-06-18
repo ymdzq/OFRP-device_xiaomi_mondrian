@@ -56,8 +56,8 @@ mi_ext                                                  /mi_ext                e
 /dev/block/bootdevice/by-name/boot                      /boot                  emmc    defaults                                             defaults
 /dev/block/bootdevice/by-name/misc                      /misc                  emmc    defaults                                             defaults
 /dev/block/bootdevice/by-name/rescue                    /cache                 ext4    nosuid,noatime,nodev,barrier=1                       wait
-/dev/block/bootdevice/by-name/modem                     /vendor/firmware_mnt   vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0 wait,slotselect
-/dev/block/bootdevice/by-name/dsp                       /vendor/dsp            ext4    ro,nosuid,nodev,barrier=1                            wait,slotselect
-/dev/block/bootdevice/by-name/vm-bootsys                /vendor/vm-system      ext4    ro,nosuid,nodev,barrier=1                            wait,slotselect
-/dev/block/bootdevice/by-name/bluetooth                 /vendor/bt_firmware    vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0 wait,slotselect
-/dev/block/bootdevice/by-name/qmcs                      /mnt/vendor/qmcs       vfat    noatime,nosuid,nodev,context=u:object_r:vendor_qmcs_file:s0   wait,check,formattable
+/dev/block/bootdevice/by-name/modem                     /modem              vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0 wait,slotselect
+/dev/block/bootdevice/by-name/dsp                       /dsp                   ext4    ro,nosuid,nodev,barrier=1                            wait,slotselect
+/dev/block/bootdevice/by-name/vm-bootsys                /vm-system             ext4    ro,nosuid,nodev,barrier=1                            wait,slotselect
+/dev/block/bootdevice/by-name/bluetooth                 /bluetooth             vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0 wait,slotselect
+#/dev/block/bootdevice/by-name/qmcs                      /qmcs                  vfat    noatime,nosuid,nodev,context=u:object_r:vendor_qmcs_file:s0   wait,check,formattable
