@@ -116,6 +116,9 @@ TW_EXCLUDE_APEX := true
 # QCOM_FIX
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
+# Kernel modules
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko focaltech_fts.ko goodix_core.ko qti_battery_charger.ko"
+
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
