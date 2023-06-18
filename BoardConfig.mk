@@ -112,6 +112,8 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 200
 TW_EXCLUDE_APEX := true
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone39/temp"
+TW_BATTERY_SYSFS_WAIT_SECONDS := 5
 
 # QCOM_FIX
 TARGET_RECOVERY_QCOM_RTC_FIX := true
