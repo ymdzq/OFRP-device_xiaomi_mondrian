@@ -29,6 +29,8 @@
 	# 使用bash代替sh和ash
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
+	# 添加橙狐的app管理器功能
+	export FOX_ENABLE_APP_MANAGER=1
 	# 使用完整版grep命令
 	export FOX_USE_GREP_BINARY=1
 	# 支持lzma, xz命令
@@ -80,10 +82,10 @@
 	# 由于橙狐默认屏幕比例是16：9,所以应设置屏幕高度为屏幕比例换算成n：9之后，n*120
 	export OF_SCREEN_H=2400
 	# 状态栏高度（默认72像素，刘海屏设备按需设置）
-	export OF_STATUS_H=92
+	export OF_STATUS_H=90
 	# 状态栏左右避让宽度（默认20像素，顶部圆角设备按需设置）
-	export OF_STATUS_INDENT_LEFT=90
-	export OF_STATUS_INDENT_RIGHT=90
+	export OF_STATUS_INDENT_LEFT=48
+	export OF_STATUS_INDENT_RIGHT=48
 	# 添加黑色状态栏（隐藏刘海）选项
 	export OF_HIDE_NOTCH=1
 	# 由于有刘海遮挡，设置时钟位置为只能显示在左侧或右侧
