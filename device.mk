@@ -20,7 +20,7 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 # A/B
 ENABLE_VIRTUAL_AB := true
 
-# Boot control HAL
+# Boot Control HAL
 PRODUCT_PACKAGES += \
     bootctrl.taro.recovery \
     android.hardware.boot@1.2-impl-qti.recovery
