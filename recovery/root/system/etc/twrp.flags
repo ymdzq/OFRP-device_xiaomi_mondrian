@@ -9,22 +9,6 @@
 /cache                 ext4    /dev/block/bootdevice/by-name/rescue                               flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
 /storage               ext4    /data/media/0                                                      flags=display="Internal Storage";backup=1;usermrf;fsflags="bind";removable
 
-# Dynamic Partition
-/system_root           erofs   /dev/block/mapper/system                                           flags=display="System";logical;slotselect
-/system_root           ext4    /dev/block/mapper/system                                           flags=display="System";logical;slotselect
-/system_ext            erofs   /dev/block/mapper/system_ext                                       flags=display="System Ext";logical;slotselect
-/system_ext            ext4    /dev/block/mapper/system_ext                                       flags=display="System Ext";logical;slotselect
-/product               erofs   /dev/block/mapper/product                                          flags=display="Product";logical;slotselect
-/product               ext4    /dev/block/mapper/product                                          flags=display="Product";logical;slotselect
-/vendor                erofs   /dev/block/mapper/vendor                                           flags=display="Vendor";logical;slotselect
-/vendor                ext4    /dev/block/mapper/vendor                                           flags=display="Vendor";logical;slotselect
-/vendor_dlkm           erofs   /dev/block/mapper/vendor_dlkm                                      flags=display="Vendor DLKM";logical;slotselect
-/vendor_dlkm           ext4    /dev/block/mapper/vendor_dlkm                                      flags=display="Vendor DLKM";logical;slotselect
-/odm                   erofs   /dev/block/mapper/odm                                              flags=display="ODM";logical;slotselect
-/odm                   ext4    /dev/block/mapper/odm                                              flags=display="ODM";logical;slotselect
-/mi_ext                erofs   /dev/block/mapper/mi_ext                                           flags=display="Mi Ext";logical;slotselect
-/mi_ext                ext4    /dev/block/mapper/mi_ext                                           flags=display="Mi Ext";logical;slotselect
-
 # Boot
 /boot                  emmc    /dev/block/bootdevice/by-name/boot                                 flags=backup=1;slotselect;flashimg=1
 /recovery              emmc    /dev/block/bootdevice/by-name/recovery                             flags=backup=1;slotselect;flashimg=1
