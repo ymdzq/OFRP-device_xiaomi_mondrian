@@ -38,6 +38,15 @@ on fs
     # touch_dev
     chown system system /sys/class/touch/touch_dev/update_rawdata
     chmod 0664 /sys/class/touch/touch_dev/update_rawdata
+
+on init
+    start boot-hal-1-2
+
+on boot
+    setprop sys.usb.config adb
+
+on property:twrp.modules.loaded=true
+    start touch_report
     # Mount firmware
     mkdir /firmware
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
@@ -45,15 +54,8 @@ on fs
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
-    umount /firmware
-
-on init
-    start boot-hal-1-2
-
-on boot
     start health-hal-2-1
-    start touch_report
-    setprop sys.usb.config adb
+    umount /firmware
 
 service touch_report /vendor/bin/touch_report
     class hal
