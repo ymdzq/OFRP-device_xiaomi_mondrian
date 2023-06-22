@@ -38,6 +38,9 @@ on fs
     # touch_dev
     chown system system /sys/class/touch/touch_dev/update_rawdata
     chmod 0664 /sys/class/touch/touch_dev/update_rawdata
+    # qcom-haptics
+    chmod 0666 /sys/class/qcom-haptics/lra_calibration
+    chmod 0666 /sys/class/qcom-haptics/lra_impedance
 
 on init
     start boot-hal-1-2
@@ -55,6 +58,7 @@ on property:twrp.modules.loaded=true
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
     start health-hal-2-1
+    start vibratorfeature-hal-service
     umount /firmware
 
 service touch_report /vendor/bin/touch_report
@@ -63,4 +67,11 @@ service touch_report /vendor/bin/touch_report
     group root uhid input
     capabilities SYS_NICE
     ioprio rt 4
+    seclabel u:r:recovery:s0
+
+service vibratorfeature-hal-service /vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
+    class hal
+    user root
+    group root input
+    onrestart restart vibratorfeature
     seclabel u:r:recovery:s0
