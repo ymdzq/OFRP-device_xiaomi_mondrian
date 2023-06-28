@@ -24,6 +24,7 @@ AB_OTA_PARTITIONS += \
     vendor \
     vendor_boot \
     vendor_dlkm
+
 # BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
