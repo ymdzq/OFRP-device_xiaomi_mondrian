@@ -94,7 +94,6 @@ BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist metadata
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
-BOARD_USES_QCOM_FBE_DECRYPTION := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
