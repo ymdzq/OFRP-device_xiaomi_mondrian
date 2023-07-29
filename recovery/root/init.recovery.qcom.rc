@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018,2020 The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2023, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -24,7 +24,6 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-import /init.recovery.qcom_decrypt.rc
 
 on early-fs
     write /proc/sys/walt/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
@@ -41,6 +40,11 @@ on fs
     # qcom-haptics
     chmod 0666 /sys/class/qcom-haptics/lra_calibration
     chmod 0666 /sys/class/qcom-haptics/lra_impedance
+    chmod 0660 /dev/qseecom
+    chown system drmrpc /dev/qseecom
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+    install_keyring
 
 on init
     start boot-hal-1-2
