@@ -113,7 +113,7 @@
 	export FOX_VIRTUAL_AB_DEVICE=1
 	# 指定super分区的完整大小，修复部分设备刷入miui rom失败，VAB设备专用变量
 	export OF_DYNAMIC_FULL_SIZE=9126805504
-	# ensure that /sdcard is bind-unmounted before f2fs data repair or format
+	# 在修复或格式化f2fs数据分区之前自动卸载绑定/sdcard
 	export OF_UNBIND_SDCARD_F2FS=1
 	# 设置默认时区为北京时间
 	export OF_DEFAULT_TIMEZONE="TAIST-8;TAIDT"
