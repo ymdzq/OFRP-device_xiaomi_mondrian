@@ -4,9 +4,8 @@
 ![OFRP](https://image.ibb.co/cTMWux/logo.jpg "OFRP")  
 ====================================================
 # 目前进度
-基本功能可用，震动反馈可用，汉化比较全，  
-自测刷miui 14.0.24.0/14.0.25.0官方包会提示失败，不知道是上游代码问题还是哪的问题，水平有限难以修复，有待后续观察。  
-vab+ab双rec分区+gki这玩意也太难搞了吧，bug超级多，有时候明明内核模块都在，进rec还是触控、电量修复全失效  
+基本功能可用，震动反馈可用，汉化比较全，可以正常刷入MIU完整包  
+vab+ab双rec分区+gki这玩意也太难搞了  
 
 主要学习了skkk佬和余空佬的marble、[fuxi](https://github.com/Device-Tree-Fuxi/device_xiaomi_fuxi_TWRP)项目  
 这个项目主要还是在本地化上做点差异，毕竟原版橙狐汉化只有八成，繁中更是没法用，方便中国搞机小伙伴参考制作过程，  
@@ -19,6 +18,15 @@ cd ~/fox_12.1
 mkdir -p device/xiaomi
 cd device/xiaomi
 git clone https://github.com/ymdzq/OFRP-device_xiaomi_mondrian.git mondrian
+```
+bootctrl需要从默认a12.1分支改成a13分支然后重新repo sync拉取  
+修改~/fox_12.1/.repo/manifests/twrp-default.xml，第99行  
+```
+    <project name="android_hardware_qcom_bootctrl" path="hardware/qcom-caf/bootctrl" remote="LineageOS" revision="lineage-19.1-caf" />
+```
+修改为  
+```
+    <project name="android_hardware_qcom_bootctrl" path="hardware/qcom-caf/bootctrl" remote="LineageOS" revision="lineage-20.0-caf" />
 ```
 打开源代码根目录运行:  
 ```bash
