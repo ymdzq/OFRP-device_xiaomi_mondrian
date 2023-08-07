@@ -1,0 +1,11 @@
+on boot
+    chown system system /sys/class/touch/touch_dev/update_rawdata
+    chmod 0664 /sys/class/touch/touch_dev/update_rawdata
+
+service touch_report /vendor/bin/touch_report
+    class hal
+    user root
+    group root uhid input
+    capabilities SYS_NICE
+    ioprio rt 4
+    seclabel u:r:recovery:s0
