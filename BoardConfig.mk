@@ -123,7 +123,7 @@ TW_BATTERY_SYSFS_WAIT_SECONDS := 5
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 # Kernel modules
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko goodix_core.ko qti_battery_charger.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko goodix_core.ko leds-qpnp-vibrator-ldo.ko qti_battery_charger.ko"
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
