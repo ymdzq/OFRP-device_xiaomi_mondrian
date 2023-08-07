@@ -29,6 +29,14 @@ on early-fs
     write /proc/sys/walt/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
     write /proc/sys/walt/sched_lib_mask_force 255
 
+on early-init
+    insmod /vendor/lib/modules/q6_pdr_dlkm.ko
+    insmod /vendor/lib/modules/q6_notifier_dlkm.ko
+    insmod /vendor/lib/modules/snd_event_dlkm.ko
+    insmod /vendor/lib/modules/gpr_dlkm.ko
+    insmod /vendor/lib/modules/spf_core_dlkm.ko
+    insmod /vendor/lib/modules/adsp_loader_dlkm.ko
+
 on fs
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
