@@ -1,0 +1,10 @@
+on fs
+    chmod 0666 /sys/class/qcom-haptics/lra_calibration
+    chmod 0666 /sys/class/qcom-haptics/lra_impedance
+
+service vibratorfeature-hal-service /vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
+    class hal
+    user root
+    group root input
+    onrestart restart vibratorfeature
+    seclabel u:r:recovery:s0
