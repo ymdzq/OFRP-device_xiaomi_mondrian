@@ -1,11 +1,13 @@
 # 橙 狐 (OFRP) for Redmi K60 (mondrian)  
-使用红米K60，MIUI 14（安卓13）制作，适用于橙狐安卓12分支  
+使用红米K60，HyperOS（安卓14）制作，适用于橙狐安卓12分支  
 
 ![OFRP](https://image.ibb.co/cTMWux/logo.jpg "OFRP")  
 ====================================================
 # 目前进度
-基本功能可用，震动反馈可用，汉化比较全，可以正常刷入MIU完整包  
+基本功能可用，震动反馈可用，汉化比较全，可以正常刷入HyperOS完整包  
 vab+ab双rec分区+gki这玩意也太难搞了  
+刷入HyperOS（安卓14）之后，触控可以正常使用  
+如果出现/data解密失败的问题，开机后设置一个锁屏密码，然后就好了
 
 主要学习了skkk佬和余空佬的marble、[fuxi](https://github.com/Device-Tree-Fuxi/device_xiaomi_fuxi_TWRP)项目  
 这个项目主要还是在本地化上做点差异，毕竟原版橙狐汉化只有八成，繁中更是没法用，方便中国搞机小伙伴参考制作过程，  
