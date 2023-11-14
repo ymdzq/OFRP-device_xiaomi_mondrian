@@ -1,6 +1,8 @@
 on boot
     chown system system /sys/class/touch/touch_dev/update_rawdata
     chmod 0664 /sys/class/touch/touch_dev/update_rawdata
+    chown system system /proc/tp_lockdown_info
+    chmod 0664 /proc/tp_lockdown_info
 
 service touch_report /vendor/bin/touch_report
     class hal
