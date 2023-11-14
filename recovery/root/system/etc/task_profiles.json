@@ -203,6 +203,19 @@
       ]
     },
     {
+      "Name": "CameraPreviewPerformance",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpu",
+            "Path": "camera-daemon/limit-level1"
+          }
+        }
+      ]
+    },
+    {
       "Name": "AudioAppPerformance",
       "Actions" : [
         {
@@ -453,45 +466,6 @@
       ]
     },
     {
-      "Name": "CameraProcessCapacityLow",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpuset",
-            "Path": "camera-background"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "CameraProcessCapacityLower",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpuset",
-            "Path": "camera-background/background"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "CameraProcessCapacityLowest",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpuset",
-            "Path": "camera-background/limit"
-          }
-        }
-      ]
-    },
-    {
       "Name": "AudioAppCapacity",
       "Actions" : [
         {
@@ -718,6 +692,19 @@
           }
         }
       ]
+    },
+    {
+      "Name": "MemoryFreezeProcess",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "memory",
+            "Path": "freeze-app"
+          }
+        }
+      ]
     }
   ],
 
@@ -743,7 +730,7 @@
       "Profiles": [ "ServicePerformance", "LowIoPriority", "TimerSlackNormal" ]
     },
     {
-      "Name": "VMCompilationPerformance",
+      "Name": "SCHED_SP_COMPUTE",
       "Profiles": [ "HighPerformance", "ProcessCapacityHigh", "LowIoPriority", "TimerSlackNormal" ]
     },
     {
@@ -779,20 +766,12 @@
       "Profiles": [ "Dex2oatPerformance", "LowIoPriority", "TimerSlackHigh" ]
     },
     {
+      "Name": "Dex2OatBackground",
+      "Profiles": [ "Dex2OatBootComplete" ]
+    },
+    {
       "Name": "OtaProfiles",
       "Profiles": [ "ServiceCapacityLow", "LowIoPriority", "HighEnergySaving" ]
-    },
-    {
-      "Name": "CPUSET_SP_CAMERA_BACKGROUND",
-      "Profiles": [ "CameraProcessCapacityLow"]
-    },
-    {
-      "Name": "CPUSET_SP_CAMERA_LOWER_BACKGROUND",
-      "Profiles": [ "CameraProcessCapacityLower"]
-    },
-    {
-      "Name": "CPUSET_SP_CAMERA_LIMIT_BACKGROUND",
-      "Profiles": [ "HighEnergySaving", "CameraProcessCapacityLowest", "LowIoPriority", "TimerSlackHigh" ]
     }
   ]
 }
