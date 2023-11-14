@@ -86,6 +86,7 @@ subsystem mem_buf_vm
 /dev/smd2                 0660   bluetooth  bluetooth
 /dev/smd3                 0660   bluetooth  bluetooth
 /dev/btpower              0660   bluetooth  system
+/dev/btfmslim             0660   bluetooth  system
 
 #permissions for pta
 /dev/pta                  0660   system     system
@@ -179,6 +180,7 @@ subsystem mem_buf_vm
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
+/dev/byte-cntr1            0660   system    oem_2902
 /dev/mhi_qdss             0660   system    oem_2902
 /sys/class/qdss_bridge/mhi_qdss  mode      0660     system   oem_2902
 
@@ -209,7 +211,6 @@ subsystem mem_buf_vm
 /dev/msm_vidc_dec_sec     0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_rotator          0660   system     system
-/dev/hw_random            0600   root       root
 /dev/sdsprpc-smd          0660   system     system
 
 #permissions for audio
