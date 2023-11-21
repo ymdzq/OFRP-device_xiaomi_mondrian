@@ -1,5 +1,3 @@
 #!/system/bin/sh
 
-mount /vendor_dlkm
-
-rmmod goodix_core && insmod /vendor_dlkm/lib/modules/goodix_core.ko
+rmmod goodix_core && insmod /vendor/lib/modules/1.1/goodix_core.ko
