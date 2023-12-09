@@ -23,9 +23,16 @@ fastboot flash recovery_a recovery.img
 fastboot flash recovery_b recovery.img
 fastboot reboot recovery
 ```
+温馨提示：  
+请根据你手机当前运行rom的安卓版本以及内核选择recovery，否则会遇到触屏失效，无法操作的问题  
+使用安卓14版本澎湃rom的手机，请刷入近期的橙狐；  
+使用安卓13版本MIUI或者其他基于安卓13移植的rom的手机，请刷23.11.04版本以及之前的橙狐；  
+skkk的twrp在安卓13上推荐使用v7.9 a13版本，在手机升级澎湃之后请刷v8.1t5及之后的版本。  
+
 目前测试下来一般的gki内核（miui官方、ksu内核、VK内核）可以正常使用  
 不兼容潘多拉内核，触屏和电量显示会失效，无法操作只能长按电源重启或者`adb reboot`  
 潘多拉内核只有skkk的twrp能正常用，由于他魔改twrp源码比较多，不开源抄不了，klozz的橙狐也是这样，所以不会修  
+
 # 如何构建
 下载OFRP源代码，克隆这个仓库放到相应的位置  
 例如OFRP源代码根目录为~/fox_12.1，则保存为~/fox_12.1/device/xiaomi/mondrian/:  
