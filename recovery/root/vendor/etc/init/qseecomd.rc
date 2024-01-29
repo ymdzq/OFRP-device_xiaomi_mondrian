@@ -2,12 +2,13 @@
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 
-on init
-    start vendor.qseecomd
+#on init
+#    start vendor.qseecomd
 
 service vendor.qseecomd /vendor/bin/qseecomd
     socket notify-topology stream 660 system drmrpc
     class core
     user root
     group root drmrpc
+    disabled
     seclabel u:r:recovery:s0
