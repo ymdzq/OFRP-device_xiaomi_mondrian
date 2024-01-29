@@ -54,7 +54,12 @@ on property:twrp.modules.loaded=true
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
+    start vendor.qseecomd
     start touch_report
     start health-hal-2-1
     start vibratorfeature-hal-service
     umount /firmware
+
+on property:vendor.sys.listeners.registered=true
+    start gatekeeper-1-0
+    start vendor.keymaster-4-1
