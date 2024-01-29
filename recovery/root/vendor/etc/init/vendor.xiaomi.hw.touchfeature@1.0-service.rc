@@ -10,4 +10,5 @@ service touch_report /vendor/bin/touch_report
     group root uhid input
     capabilities SYS_NICE
     ioprio rt 4
+    disabled
     seclabel u:r:recovery:s0

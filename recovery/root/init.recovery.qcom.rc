@@ -47,7 +47,6 @@ on boot
     setprop sys.usb.config adb
 
 on property:twrp.modules.loaded=true
-    start touch_report
     # Mount firmware
     mkdir /firmware
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
@@ -55,6 +54,7 @@ on property:twrp.modules.loaded=true
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
+    start touch_report
     start health-hal-2-1
     start vibratorfeature-hal-service
     umount /firmware
