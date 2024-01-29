@@ -7,4 +7,5 @@ service vibratorfeature-hal-service /vendor/bin/hw/vendor.xiaomi.hardware.vibrat
     user root
     group root input
     onrestart restart vibratorfeature
+    disabled
     seclabel u:r:recovery:s0
