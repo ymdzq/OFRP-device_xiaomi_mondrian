@@ -1,12 +1,12 @@
 # 橙 狐 (OFRP) for Redmi K60 (mondrian)  
-使用红米K60，HyperOS（安卓14）制作，适用于橙狐安卓12分支  
+使用红米K60，HyperOS2.0（安卓15）制作，适用于橙狐安卓12分支  
 
 ![OFRP](https://image.ibb.co/cTMWux/logo.jpg "OFRP")  
 ====================================================
 # 目前进度
 基本功能可用，震动反馈可用，汉化比较全，可以正常刷入HyperOS完整包  
 vab+ab双rec分区+gki这玩意也太难搞了  
-刷入HyperOS（安卓14）之后，触控可以正常使用  
+刷入HyperOS2.0（安卓15）之后，触控可以正常使用  
 如果出现/data解密失败的问题，开机后设置一个锁屏密码，然后就好了
 
 主要学习了skkk佬和余空佬的marble、[fuxi](https://github.com/Device-Tree-Fuxi/device_xiaomi_fuxi_TWRP)项目  
@@ -25,13 +25,14 @@ fastboot reboot recovery
 ```
 温馨提示：  
 请根据你手机当前运行rom的安卓版本以及内核选择recovery，否则会遇到触屏失效，无法操作的问题  
-使用安卓14版本澎湃rom的手机，请刷入近期的橙狐；  
+使用安卓15版本澎湃rom的手机，请刷入文件名/版本号里包括_A15字样的橙狐；  
+使用安卓14版本澎湃rom的手机，请刷24.02.25及之后的橙狐；  
 使用安卓13版本MIUI或者其他基于安卓13移植的rom的手机，请刷23.11.04版本以及之前的橙狐；  
-skkk的twrp在安卓13上推荐使用v7.9 a13版本，在手机升级澎湃之后请刷v8.1t5及之后的版本。  
+[skkk的twrp](https://www.123pan.com/s/qHhDVv-nuQJv)在安卓13上推荐使用v7.9 a13版本，在手机升级澎湃之后请刷v8.6 a14版本，升级澎湃2.0之后请刷v9.0及之后的版本。  
 
 目前测试下来一般的gki内核（miui官方、ksu内核、VK内核）可以正常使用  
 不兼容潘多拉内核，触屏和电量显示会失效，无法操作只能长按电源重启或者`adb reboot`  
-潘多拉内核只有skkk的twrp能正常用，由于他魔改twrp源码比较多，不开源抄不了，klozz的橙狐也是这样，所以不会修  
+潘多拉内核不会修  
 
 # 如何构建
 下载OFRP源代码，克隆这个仓库放到相应的位置  
@@ -42,14 +43,14 @@ mkdir -p device/xiaomi
 cd device/xiaomi
 git clone https://github.com/ymdzq/OFRP-device_xiaomi_mondrian.git mondrian
 ```
-bootctrl需要从默认a12.1分支改成a13分支然后重新repo sync拉取  
+bootctrl需要从默认a12.1分支改成a14分支然后重新repo sync拉取  
 修改~/fox_12.1/.repo/manifests/twrp-default.xml，第99行  
 ```
     <project name="android_hardware_qcom_bootctrl" path="hardware/qcom-caf/bootctrl" remote="LineageOS" revision="lineage-19.1-caf" />
 ```
 修改为  
 ```
-    <project name="android_hardware_qcom_bootctrl" path="hardware/qcom-caf/bootctrl" remote="LineageOS" revision="lineage-20.0-caf" />
+    <project name="android_hardware_qcom_bootctrl" path="hardware/qcom-caf/bootctrl" remote="LineageOS" revision="lineage-21.0-caf" />
 ```
 打开源代码根目录运行:  
 ```bash
@@ -70,7 +71,7 @@ OrangeFox Branch
 Custom Recovery Tree  
 `https://github.com/ymdzq/OFRP-device_xiaomi_mondrian`  
 Custom Recovery Tree Branch  
-`fox_12.1-a14`  
+`fox_12.1-a15`  
 Specify your device path.  
 `device/xiaomi/mondrian`  
 Specify your Device Codename.  
