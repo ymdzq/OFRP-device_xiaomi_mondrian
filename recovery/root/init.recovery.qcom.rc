@@ -38,6 +38,10 @@ on fs
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+    mkdir /mnt/vendor 0775 shell system
+    mkdir /mnt/vendor/persist 0775 shell system
+    mkdir /tmp/persist 0775 shell system
+    mount none /tmp/persist /mnt/vendor/persist bind rec
     install_keyring
 
 on init
