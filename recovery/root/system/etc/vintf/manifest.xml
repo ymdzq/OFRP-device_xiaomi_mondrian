@@ -3,7 +3,7 @@
         system/libhidl/vintfdata/manifest.xml
         device/xiaomi/missi/framework_manifest.xml
 -->
-<manifest version="7.0" type="framework">
+<manifest version="4.0" type="framework">
     <hal format="hidl" max-level="6">
         <name>android.frameworks.displayservice</name>
         <transport>hwbinder</transport>
@@ -22,6 +22,16 @@
         <name>android.frameworks.sensorservice</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::ISensorManager/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hidl.manager</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>IServiceManager</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.2::IServiceManager/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hidl.memory</name>
