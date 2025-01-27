@@ -157,5 +157,8 @@ TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko goodix_core.ko leds-qpnp-vibrator-ldo.ko msm_drm.ko qti_battery_charger_main_m81.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
+# THP fix
+TW_XIAOMI_TOUCH_PERMISSION_FIX := true
+
 # Serialno
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
