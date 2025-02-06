@@ -23,8 +23,6 @@
 /vendor_dlkm           ext4    /dev/block/mapper/vendor_dlkm                                      flags=display="Vendor DLKM";logical;slotselect
 /odm                   erofs   /dev/block/mapper/odm                                              flags=display="ODM";logical;slotselect
 /odm                   ext4    /dev/block/mapper/odm                                              flags=display="ODM";logical;slotselect
-/mi_ext                erofs   /dev/block/mapper/mi_ext                                           flags=display="Mi Ext";logical;slotselect
-/mi_ext                ext4    /dev/block/mapper/mi_ext                                           flags=display="Mi Ext";logical;slotselect
 
 # Boot
 /boot                  emmc    /dev/block/bootdevice/by-name/boot                                 flags=backup=1;slotselect;flashimg=1
