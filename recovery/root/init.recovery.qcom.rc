@@ -62,6 +62,7 @@ on property:twrp.modules.loaded=true
     start touch_report
     start health-hal-2-1
     start vibratorfeature-hal-service
+    start batterysecret
     umount /firmware
 
 on property:vendor.sys.listeners.registered=true
