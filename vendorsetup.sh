@@ -30,6 +30,8 @@
 	export FOX_USE_LZ4_BINARY=1
 	# 支持zstd命令
 	export FOX_USE_ZSTD_BINARY=1
+	# 支持date命令
+	export FOX_USE_DATE_BINARY=1
 	# 使用bash代替sh和ash
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
@@ -55,10 +57,6 @@
 	# ramdisk使用lz4压缩
 	export OF_USE_LZ4_COMPRESSION=1
 
-	# 当安装MIUI或者在MIUI上安装橙狐zip，使用magisk处理所有boot和recovery镜像，防止橙狐被MIUI官方recovery替换
-	export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
-	# 避免在已加密设备上应用强制加密补丁
-	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
 	# 跳过FBE解密流程（防止卡在橙狐LOGO或Redmi/Mi LOGO界面）
 	# export OF_SKIP_FBE_DECRYPTION=1
 	# 当ROM大于等于指定安卓SDK等级时，跳过FBE解密流程
