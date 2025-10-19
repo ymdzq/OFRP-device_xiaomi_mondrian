@@ -25,6 +25,7 @@ fastboot reboot recovery
 ```
 温馨提示：  
 请根据你手机当前运行rom的安卓版本以及内核选择recovery，否则会遇到触屏失效，无法操作的问题  
+使用安卓16版本澎湃rom的手机，请刷入文件名/版本号里包括_A16字样的橙狐；  
 使用安卓15版本澎湃rom的手机，请刷入文件名/版本号里包括_A15字样的橙狐；  
 使用安卓14版本澎湃rom的手机，请刷24.02.25及之后的橙狐；  
 使用安卓13版本MIUI或者其他基于安卓13移植的rom的手机，请刷23.11.04版本以及之前的橙狐；  
@@ -71,7 +72,7 @@ OrangeFox Branch
 Custom Recovery Tree  
 `https://github.com/ymdzq/OFRP-device_xiaomi_mondrian`  
 Custom Recovery Tree Branch  
-`fox_12.1-a15`  
+`fox_12.1-a16`  
 Specify your device path.  
 `device/xiaomi/mondrian`  
 Specify your Device Codename.  
